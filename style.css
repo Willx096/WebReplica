@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{ /*SE DEBE PONER PARA ELIMINAR EL "MARGIN, PADDING  AND BOX SIZING" ESTABLECIDO POR DEFAULT POR CADA NAVEGADOR*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{   /*LA PARRILLA (GRID) CREA LINEAS Y COLUMNAS QUE SON INVISIBLES PARA EL USER. AYUDA A CREAR LA WEB DE FORMA MÁS RÁPIDA Y SENCILLA*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*SE ESTABLECE TAMAÑO Y A SU VEZ NÚMERO DE COLUMNAS. EL "1FR" RESUMIDAMENTE SIGNIFICA <ESPACIO QUE SOBRA> [EN ESTE CASO DECIMOS QUE TENDRA 3 COLUMNAS CON EL MISMO TAMAÑO]*/
+}
+
+header{
+    grid-column: 1/4; /*ESTABLECE LA POSICIÓN QUE OCUPARÁ EN LA GRID. [EN ESTE CASO LE DECIMOS QUE DE LA 1º COLUMNA A LA 4º COLUMNA] ¿PERO QUE NO HABIAMOS ESTABLECIDO 3 COLUMNS? SI, PERO SON EN LAS CUALES PODEMOS PONER ALGO DENTRO PERO EN VERDAD AL FINAL SIEMPRE HABRÁN 1 MÁS ¿POR QUÉ? NO SÉ XDDDD*/
+    background: url(./images/Background\ image_edited.png);
+    background-repeat: no-repeat; /*PA QUE NO SE REPITA LA IMAGEN COMO MOSAICOS*/
+    background-size: cover; /*RECORTA Y AJUSTA LA IMAGEN AL TAMAÑO ANTES ESTABLECIDO*/
+    width: 100%;
+    height: 400px;
+    padding: 30px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header > p{
+    margin-top: 100px; /*ESPACIO QUE HAY ENTRE EL CONTENEDOR AL CONTENEDOR DE ARRIBA*/
+}
+
+nav{
+    display: flex;
+    justify-content:space-between; /*justify-content: ; define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor.*/
+    /*space-between: crea un espacio solo entre los elementos
+      space-around: crea un espacio dentro del contenedor y con los elementos.*/
+}
+
+nav > ul > li{
+    display: inline;
+    margin: 10px;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color:white;
+}
+
+header > hr{
+    height: 0.5px;
+    background-color: white;
+    border: none;
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(235, 235, 235);
+    grid-column: 1/4;
+    justify-content: center;
+    padding: 30px;
+    display: inline-flex;
+    letter-spacing: 1px;
+}
+
+label > button{
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+    border:none;
+    color: white;
+    margin: -10px;
+    margin-left: 15px;
+    letter-spacing: 0.8px;
+    background: linear-gradient(90deg, rgba(255,149,0,1) 50%, rgba(255,231,81,0.9426879008383328) 100%); /*color sacado de un generador de google xddd*/
+    box-shadow: 0px 10px 31px -6px rgba(0,0,0,0.75);
+}
+
+
+/*MAIN*/
+
+
+main{
+    grid-column: 1/4;
+    padding: 70px 120px;
+}
+
+.home-articles{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.home-articles > article{
+    width: 270px;
+    padding: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.title-article{
+    justify-content: center;
+    display: inline-flex;
+}
+
+.title-article > img{
+    margin-right: 5px;
+}
+
+article{
+    display: inline;
+    width: 20%;
+}
+
+article > h2{
+    width: 180px;
+}
+
+blockquote > article > hr{
+    background-color: navy;
+    width: 30px;
+    height: 5px;
+    border-radius: 20px;
+    border:none;
+    margin: auto;
+}
+
+blockquote > article > .message > p{
+    margin-left: 20px;
+}
+
+blockquote > article > .person{
+    display: flex;
+}
+
+blockquote > article > .person > img{
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 30px 10px 30px 40px;
+}
+
+blockquote > article > .person > .name-person{
+    margin-top: 45px;
+}
+
+main > img {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+}
+
+blockquote{
+    margin-top: 70px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 30px 30px 0px 30px;
+    border-radius: 20px;
+    border: 1px rgb(236, 236, 236) solid;
+    box-shadow: 0px 10px 31px -28px rgba(0,0,0,0.75);
+    width: 530px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main > blockquote > article > p{
+    text-align: center;
+}
+
+main > blockquote > article > .message{
+    display: flex;
+    font-style: italic;
+    letter-spacing: 0.5;
+}
+
+main > button{
+    font-family: 'Open Sans', sans-serif;
+
+    display: block; /*"display:block; margin-left: auto; margin-right: auto;" centra algo a la pantalla*/
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 40px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+    border:none;
+    color: white;
+    letter-spacing: 0.8px;
+    background: linear-gradient(90deg, rgba(255,149,0,1) 50%, rgba(255,231,81,0.9426879008383328) 100%);
+    box-shadow: 0px 10px 31px -6px rgba(0,0,0,0.75);
+}
+
+
+
+
+
+
+/*FOOTER*/
+footer{
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(235, 235, 235);
+    grid-column: 1/4;
+    justify-content: center;
+    padding: 30px;
+    display: flex;
+    letter-spacing: 1px;
+}
+
+
+
+.animate__flipInX:hover{
+
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
